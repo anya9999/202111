@@ -12,23 +12,26 @@
   ゼミ発表の補足
 
   <h4>WSL2を1にダウングレード</h4>
-  Windows PowerShell ISE を管理者で実行し、以下を入力し実行する<a target="_blank"href="https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/">（[参考サイト]）</a>
+  Windows PowerShell ISE を管理者で実行し、以下を入力し実行する
+  <br><a target="_blank" href="https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/">参考サイト</a>
 
-  <code>wsl --set-version Ubuntu-20.04 1</code>
-  
-  
+  <pre><code>
+    wsl --set-version Ubuntu-20.04 1
+  </code></pre>
+
+
 
   <h4>Ubuntuのコンディションを整える</h4>
   Ubuntu20.04 LTS に以下を入力し実行する
 
-  ```
+  <pre><code>
   sudo apt update
   sudo apt upgrade
-  ```
+  </code></pre>
 
-  <h4>SDL2をインストール</h4>（[参考サイト](https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631)）
+  <h4>SDL2をインストール</h4>
   Ubuntu20.04 LTS に以下を入力し実行する
-
+  <br><a target="_blank" href="https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631">参考サイト</a>
   <pre><code>
   sudo apt-get install mercurial
   hg clone https://hg.libsdl.org/SDL SDL
@@ -39,12 +42,13 @@
   sudo apt install make
   make
   sudo make install
-</code></pre>
+  </code></pre>
 
-  <h4>サンプルコード</h4>（[参考サイト](https://k38.hatenadiary.jp/entry/2018/10/04/01033)）
+  <h4>サンプルコード</h4>
   作業用のディレクトリを作成、そのディレクトリの中に以下の内容のsample04.cファイルを作成
-
-  ```C:sample04.c
+  <br><a target="_blank" href="https://k38.hatenadiary.jp/entry/2018/10/04/01033">参考サイト</a>
+  sample04.c
+  <pre><code>
   #include <SDL2 /SDL.h>
     #include <stdio.h>
 
@@ -63,14 +67,29 @@
         printf( "Window could not be created! SDL_Error: %s\n" , SDL_GetError() ); } else {
         renderer=SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); SDL_RenderClear(renderer);
         SDL_RenderPresent(renderer); SDL_Delay(3000); } } SDL_DestroyRenderer(renderer); SDL_DestroyWindow(window);
-        SDL_Quit(); return 0; } ``` <h4>作業用ディレクトリに移動</h4>
-        homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTSに入力し実行する
-        ``` cd demo ```
-        <h4>コンパイルと実行</h4>（[参考サイト](http://sdl2referencejp.osdn.jp/index.html)） Ubuntu20.04 LTS
-        に以下を入力し実行する ``` gcc -g -o sample04 sample04.c `sdl2-config --cflags --libs` ./sample04 ``` ####
-        <h4>発生している問題・エラー</h4>
-        ```
-        SDL could not initialize! SDL_Error: No available video device ```
+        SDL_Quit(); return 0; }
+  </code></pre>
+
+  <h4>作業用ディレクトリに移動</h4>
+  homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTSに入力し実行する
+  <pre><code>
+  cd demo
+  </code></pre>
+
+  
+  <h4>コンパイルと実行</h4>
+  Ubuntu20.04 LTS に以下を入力し実行する
+  <br><a target="_blank" href="http://sdl2referencejp.osdn.jp/index.html">参考サイト</a>F
+  <pre><code>
+  gcc -g -o sample04 sample04.c `sdl2-config --cflags --libs` 
+  ./sample04
+  </code></pre>
+
+  <h4>発生している問題・エラー</h4>
+
+  <pre><code>
+    SDL could not initialize! SDL_Error: No available video device
+  </code></pre>
 
 </body>
 
