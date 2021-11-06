@@ -146,9 +146,7 @@ div.code-toolbar>.toolbar span:focus {
   transition: 0.2s ease-in-out; /*追加*/
 }
 
-}
-h2{font-size: 5vw;}
-
-body{
-  font-size: 3vw;
+#wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
 }
