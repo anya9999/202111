@@ -145,3 +145,10 @@ div.code-toolbar>.toolbar span:focus {
   transform: scale(1.2); /*追加*/
   transition: 0.2s ease-in-out; /*追加*/
 }
+
+}
+h2{font-size: 5vw;}
+
+body{
+  font-size: 3vw;
+}
