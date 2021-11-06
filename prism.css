@@ -150,3 +150,7 @@ div.code-toolbar>.toolbar span:focus {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+body{
+  font-size: 4vw;
+}
