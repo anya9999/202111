@@ -1,5 +1,5 @@
 /* PrismJS 1.25.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+c&plugins=show-language+toolbar+copy-to-clipboard */
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+c&plugins=toolbar+copy-to-clipboard */
 
 code[class*=language-], pre[class*=language-] {
   color: #ccc;
@@ -24,7 +24,7 @@ code[class*=language-], pre[class*=language-] {
 pre[class*=language-] {
   padding: 1em;
   margin: .5em 0;
-  overflow: scroll;
+  overflow: auto
 }
 
 :not(pre)>code[class*=language-], pre[class*=language-] {
@@ -90,60 +90,63 @@ pre[class*=language-] {
 }
 
 div.code-toolbar {
-  position: relative;
+  position: relative
 }
 
-/*　toolbarの位置変更*/
-div.code-toolbar > .toolbar {
-position: absolute;
-top: .3em;
-left: .2em;
-/*transition: opacity 0.3s ease-in-out;
-opacity: 1;*/
+div.code-toolbar>.toolbar {
+  position: absolute;
+  z-index: 10;
+  top: .3em;
+  right: .2em;
+  /*transition: opacity .3s ease-in-out;
+  opacity: 1*/
 }
 
-div.code-toolbar>.toolbar .toolbar-item {
-  display: inline-block;
+/*div.code-toolbar:hover>.toolbar {
+  opacity: 1
+}*/
+
+/*div.code-toolbar:focus-within>.toolbar {
+  opacity: 1
+}*/
+
+div.code-toolbar>.toolbar>.toolbar-item {
+  display: inline-block
 }
 
-div.code-toolbar>.toolbar a {
-  cursor: pointer;
+div.code-toolbar>.toolbar>.toolbar-item>a {
+  cursor: pointer
 }
 
-div.code-toolbar>.toolbar button {
-  background:none;
+div.code-toolbar>.toolbar>.toolbar-item>button {
+  background: 0 0;
   border: 0;
   color: inherit;
   font: inherit;
-  line-height: bold;
+  line-height: normal;
   overflow: visible;
   padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none
 }
 
-/*div.code-toolbar > .toolbar button,*/
-div.code-toolbar>.toolbar a,
-div.code-toolbar>.toolbar span {
-  color: rgb(183, 233, 253);
-  /*font-size: 1em;    /*.8emから変更*/
-  padding: 0 1em;    
-  /*background: #f5f2f0;　ダブっているので削除*/
-  background: #272822;    /*rgba(224, 224, 224, 0.2)から変更*/
-  /*box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);　削除*/
-  border-radius: 0.3em 0.3em 0.3em 0.3em;    /*.5emから変更[上][右][下][左]*/
-  border: 1px solid #555;    /*追加*/
-  font-weight: none;    /*追加*/
+div.code-toolbar>.toolbar>.toolbar-item>a, div.code-toolbar>.toolbar>.toolbar-item>button, div.code-toolbar>.toolbar>.toolbar-item>span {
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  padding: 0 1em;
+  background: #f5f2f0;
+  background: rgb(224, 224, 224);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0);
+  border-radius: .5em
 }
 
-/*div.code-toolbar > .toolbar span:hover,　hover解除*/
-div.code-toolbar>.toolbar a:hover,
-div.code-toolbar>.toolbar a:focus,
-div.code-toolbar>.toolbar button:hover,
-div.code-toolbar>.toolbar button:focus,
-div.code-toolbar>.toolbar span:focus {
-  color: aqua;    /*inheritから変更*/
+div.code-toolbar>.toolbar>.toolbar-item>a:focus, div.code-toolbar>.toolbar>.toolbar-item>a:hover, div.code-toolbar>.toolbar>.toolbar-item>button:focus, div.code-toolbar>.toolbar>.toolbar-item>button:hover, div.code-toolbar>.toolbar>.toolbar-item>span:focus, div.code-toolbar>.toolbar>.toolbar-item>span:hover {
+  color:rgb(255, 255, 255);
+  background: rgb(70, 70, 70);
   text-decoration: none;
-  transform: scale(1.2); /*追加*/
-  transition: 0.2s ease-in-out; /*追加*/
+  /*transform: scale(1.2); 追加*/
+  /*transition: 0.2s ease-in-out; 追加*/
 }
 
 #wrapper{
