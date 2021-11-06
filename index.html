@@ -3,10 +3,13 @@
 
 <head>
   <title>zemi no hosoku</title>
+  <link rel="stylesheet" href="prism.css">
+  <meta name="vewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <body>
 
+  <script type="text/javascript" src="techAcademy.js"></script>
 
   <h4>記事の目的</h4>
   ゼミ発表の補足
@@ -48,39 +51,44 @@
   作業用のディレクトリを作成、そのディレクトリの中に以下の内容のsample04.cファイルを作成
   <br><a target="_blank" href="https://k38.hatenadiary.jp/entry/2018/10/04/01033">参考サイト</a>
   sample04.c
-  <code>
-  #include <SDL2 /SDL.h>
-    #include <stdio.h>
 
-      const int SCREEN_WIDTH = 640;
-      const int SCREEN_HEIGHT = 480;
-
-      int main( int argc, char* args[] ) {
-
-      SDL_Window* window = NULL;
-      SDL_Renderer *renderer = NULL;
-
-      //Initialize SDL
-      if( SDL_Init( SDL_INIT_VIDEO ) < 0 ) { printf( "SDL could not initialize! SDL_Error: %s\n" , SDL_GetError() ); 
-      } else { 
-        //Create window window=SDL_CreateWindow( "Hello SDL" , SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL); 
-        if( window==NULL ) {
-        printf( "Window could not be created! SDL_Error: %s\n" , SDL_GetError() ); 
-        } else {
-        renderer=SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); 
-        SDL_RenderClear(renderer);
-        SDL_RenderPresent(renderer); SDL_Delay(3000);
+  <pre class="line-numbers">
+    <code class="language-HTML c">
+    　<!-- ソースコード start-->
+    　#include <SDL2 /SDL.h>
+      #include <stdio.h>
+  
+        const int SCREEN_WIDTH = 640;
+        const int SCREEN_HEIGHT = 480;
+  
+        int main( int argc, char* args[] ) {
+  
+        SDL_Window* window = NULL;
+        SDL_Renderer *renderer = NULL;
+  
+        //Initialize SDL
+        if( SDL_Init( SDL_INIT_VIDEO ) < 0 ) { printf( "SDL could not initialize! SDL_Error: %s\n" , SDL_GetError() ); 
+        } else { 
+          //Create window window=SDL_CreateWindow( "Hello SDL" , SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL); 
+          if( window==NULL ) {
+          printf( "Window could not be created! SDL_Error: %s\n" , SDL_GetError() ); 
+          } else {
+          renderer=SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); 
+          SDL_RenderClear(renderer);
+          SDL_RenderPresent(renderer); SDL_Delay(3000);
+          }
         }
-      }
-
-        SDL_DestroyRenderer(renderer);
-        SDL_DestroyWindow(window);
-
-        SDL_Quit();
-
-        return 0;
-  }
-  </code>
+  
+          SDL_DestroyRenderer(renderer);
+          SDL_DestroyWindow(window);
+  
+          SDL_Quit();
+  
+          return 0;
+    }
+    　<!-- ソースコード end-->
+    </code>
+  </pre>
 
   <h4>作業用ディレクトリに移動</h4>
   homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTSに入力し実行する
