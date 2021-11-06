@@ -1,14 +1,14 @@
 ####記事の目的
 ゼミ発表の補足
 
-####WSL2を1にダウングレード（[参考サイト](https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/)）
+#### WSL2を1にダウングレード（[参考サイト](https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/)）
 Windows PowerShell ISE を管理者で実行し、以下を入力し実行する
 
 ``` 
 wsl --set-version Ubuntu-20.04 1
 ```
 
-####Ubuntuのコンディションを整える
+#### Ubuntuのコンディションを整える
 Ubuntu20.04 LTS に以下を入力し実行する
 
 ```
@@ -16,7 +16,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-####SDL2をインストール（[参考サイト](https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631)）
+#### SDL2をインストール（[参考サイト](https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631)）
 Ubuntu20.04 LTS に以下を入力し実行する
 
 ```
@@ -31,7 +31,7 @@ make
 sudo make install
 ```
 
-####サンプルコード（[参考サイト](https://k38.hatenadiary.jp/entry/2018/10/04/01033)）
+#### サンプルコード（[参考サイト](https://k38.hatenadiary.jp/entry/2018/10/04/01033)）
 作業用のディレクトリを作成、そのディレクトリの中に以下の内容のsample04.cファイルを作成
 
 ```C:sample04.c
@@ -75,13 +75,13 @@ int main( int argc, char* args[] ) {
 }
 ```
 
-####作業用ディレクトリに移動
+#### 作業用ディレクトリに移動
 homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTS に入力し実行する
 
 ```
 cd demo
 ```
-####コンパイルと実行（[参考サイト](http://sdl2referencejp.osdn.jp/index.html)）
+#### コンパイルと実行（[参考サイト](http://sdl2referencejp.osdn.jp/index.html)）
 Ubuntu20.04 LTS に以下を入力し実行する
 
 ```
