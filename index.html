@@ -26,43 +26,44 @@
   <script src="prism.js"></script>
   <h2>このページの読み方</h2>
   
-  nihongo ga okashii toki ha google-honyaku de eigo wo sentaku suru to naorimasu<br>
+  〇　nihongo ga okashii toki ha google-honyaku de eigo wo sentaku suru to naorimasu<br>
+  〇　$ はプロンプトを表している。<br>
 
   <br><h2>WSL2を1にダウングレード</h2>
-  Windows PowerShell ISE を管理者で実行し、以下を入力し実行する
+  Windows PowerShell ISE を管理者で実行し、以下のコマンドを入力し実行する
   (<a target="_blank" href="https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/">参考サイト</a>)
 
   <pre class="line-numbers">
   <code class="language-Shell ">
-  wsl --set-version Ubuntu-20.04 1
+  $ wsl --set-version Ubuntu-20.04 1
   </code></pre>
 
 
 
   <br><h2>Ubuntuのコンディションを整える</h2>
-  Ubuntu20.04 LTS に以下を入力し実行する
+  Ubuntu20.04 LTS に以下のコマンドを入力し実行する
 
   <pre class="line-numbers">
   <code class="language-Bash ">
-  sudo apt update
-  sudo apt upgrade
+  $ sudo apt update
+  $ sudo apt upgrade
   </code></pre>
 
   <br><h2>SDL2をインストール</h2>
-  Ubuntu20.04 LTS に以下を入力し実行する
+  Ubuntu20.04 LTS に以下のコマンドを入力し実行する
   (<a target="_blank" href="https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631">参考サイト</a>)
 
   <pre class="line-numbers">
   <code class="language-Bash ">
-  sudo apt-get install mercurial
-  hg clone https://hg.libsdl.org/SDL SDL
-  cd SDL
-  mkdir build
-  cd build
-  ../configure
-  sudo apt install make
-  make
-  sudo make install
+  $ sudo apt-get install mercurial
+  $ hg clone https://hg.libsdl.org/SDL SDL
+  $ cd SDL
+  $ mkdir build
+  $ cd build
+  $ ../configure
+  $ sudo apt install make
+  $ make
+  $ sudo make install
   </code></pre>
 
   <br><h2>サンプルコード</h2>
@@ -122,18 +123,18 @@
   homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTSに入力し実行する
   <pre class="line-numbers">
   <code class="language-Bash ">
-  cd demo
+  $ cd demo
   </code></pre>
 
   
   <br><h2>コンパイルと実行</h2>
-  Ubuntu20.04 LTS に以下を入力し実行する
+  Ubuntu20.04 LTS に以下のコマンドを入力し実行する
   (<a target="_blank" href="http://sdl2referencejp.osdn.jp/index.html">参考サイト</a>)
 
   <pre class="line-numbers">
   <code class="language-Bash ">
-  gcc -g -o sample04 sample04.c `sdl2-config --cflags --libs` 
-  ./sample04
+  $ gcc -g -o sample04 sample04.c `sdl2-config --cflags --libs` 
+  $ ./sample04
   </code></pre>
 
   <br><h2>発生している問題・エラー</h2>
