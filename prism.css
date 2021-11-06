@@ -24,7 +24,7 @@ code[class*=language-], pre[class*=language-] {
 pre[class*=language-] {
   padding: 1em;
   margin: .5em 0;
-  overflow: auto
+  overflow: scroll;
 }
 
 :not(pre)>code[class*=language-], pre[class*=language-] {
@@ -147,10 +147,10 @@ div.code-toolbar>.toolbar span:focus {
 }
 
 #wrapper{
-  max-width: 1000px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-body{
+/*body{
   font-size: 4vw;
 }
