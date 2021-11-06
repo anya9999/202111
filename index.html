@@ -48,7 +48,7 @@
   作業用のディレクトリを作成、そのディレクトリの中に以下の内容のsample04.cファイルを作成
   <br><a target="_blank" href="https://k38.hatenadiary.jp/entry/2018/10/04/01033">参考サイト</a>
   sample04.c
-  <pre><code>
+  <code>
   #include <SDL2 /SDL.h>
     #include <stdio.h>
 
@@ -62,7 +62,7 @@
 
       //Initialize SDL
       if( SDL_Init( SDL_INIT_VIDEO ) < 0 ) { printf( "SDL could not initialize! SDL_Error: %s\n" , SDL_GetError() ); 
-      }else { 
+      } else { 
         //Create window window=SDL_CreateWindow( "Hello SDL" , SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL); 
         if( window==NULL ) {
         printf( "Window could not be created! SDL_Error: %s\n" , SDL_GetError() ); 
@@ -80,7 +80,7 @@
 
         return 0;
   }
-  </code></pre>
+  </code>
 
   <h4>作業用ディレクトリに移動</h4>
   homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTSに入力し実行する
