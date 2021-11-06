@@ -1,94 +1,77 @@
-####記事の目的
-ゼミ発表の補足
+<!DOCTYPE html>
+<html lang="ja">
 
-####WSL2を1にダウングレード（[参考サイト](https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/)）
-Windows PowerShell ISE を管理者で実行し、以下を入力し実行する
+<head>
+  <title>zemi no hosoku</title>
+</head>
 
-``` 
-wsl --set-version Ubuntu-20.04 1
-```
+<body>
 
-####Ubuntuのコンディションを整える
-Ubuntu20.04 LTS に以下を入力し実行する
 
-```
-sudo apt update
-sudo apt upgrade
-```
+  <h4>記事の目的</h4>
+  ゼミ発表の補足
 
-####SDL2をインストール（[参考サイト](https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631)）
-Ubuntu20.04 LTS に以下を入力し実行する
+  <h4>WSL2を1にダウングレード</h4>（[参考サイト](https://yoshinorin.net/2020/08/22/downgrade-wsl2-to-wsl1/)）
+  Windows PowerShell ISE を管理者で実行し、以下を入力し実行する
 
-```
-sudo apt-get install mercurial
-hg clone https://hg.libsdl.org/SDL SDL
-cd SDL
-mkdir build
-cd build
-../configure
-sudo apt install make
-make
-sudo make install
-```
+  ```
+  wsl --set-version Ubuntu-20.04 1
+  ```
 
-####サンプルコード（[参考サイト](https://k38.hatenadiary.jp/entry/2018/10/04/01033)）
-作業用のディレクトリを作成、そのディレクトリの中に以下の内容のsample04.cファイルを作成
+  <h4>Ubuntuのコンディションを整える</h4>
+  Ubuntu20.04 LTS に以下を入力し実行する
 
-```C:sample04.c
-#include <SDL2/SDL.h>
-#include <stdio.h>
+  ```
+  sudo apt update
+  sudo apt upgrade
+  ```
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+  <h4>SDL2をインストール</h4>（[参考サイト](https://gist.github.com/kazz12211/f62ebac811a6205fbd245a9021942631)）
+  Ubuntu20.04 LTS に以下を入力し実行する
 
-int main( int argc, char* args[] ) {
+  ```
+  sudo apt-get install mercurial
+  hg clone https://hg.libsdl.org/SDL SDL
+  cd SDL
+  mkdir build
+  cd build
+  ../configure
+  sudo apt install make
+  make
+  sudo make install
+  ```
 
-    SDL_Window* window = NULL;
-    SDL_Renderer *renderer = NULL;
+  <h4>サンプルコード</h4>（[参考サイト](https://k38.hatenadiary.jp/entry/2018/10/04/01033)）
+  作業用のディレクトリを作成、そのディレクトリの中に以下の内容のsample04.cファイルを作成
 
-    //Initialize SDL
-    if( SDL_Init( SDL_INIT_VIDEO ) < 0 ) {
-        printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-    } else {
-        //Create window
-        window = SDL_CreateWindow( "Hello SDL", SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL);
+  ```C:sample04.c
+  #include <SDL2 /SDL.h>
+    #include <stdio.h>
 
-        if( window == NULL ) {
-            printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
-        } else {
+      const int SCREEN_WIDTH = 640;
+      const int SCREEN_HEIGHT = 480;
 
-            renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+      int main( int argc, char* args[] ) {
 
-            SDL_RenderClear(renderer);
-            SDL_RenderPresent(renderer);
+      SDL_Window* window = NULL;
+      SDL_Renderer *renderer = NULL;
 
-            SDL_Delay(3000);
-        }
-    }
+      //Initialize SDL
+      if( SDL_Init( SDL_INIT_VIDEO ) < 0 ) { printf( "SDL could not initialize! SDL_Error: %s\n" , SDL_GetError() ); }
+        else { //Create window window=SDL_CreateWindow( "Hello SDL" , SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,
+        SCREEN_WIDTH, SCREEN_HEIGHT,SDL_WINDOW_OPENGL); if( window==NULL ) {
+        printf( "Window could not be created! SDL_Error: %s\n" , SDL_GetError() ); } else {
+        renderer=SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer); SDL_Delay(3000); } } SDL_DestroyRenderer(renderer); SDL_DestroyWindow(window);
+        SDL_Quit(); return 0; } ``` <h4>作業用ディレクトリに移動</h4>
+        homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTSに入力し実行する
+        ``` cd demo ```
+        <h4>コンパイルと実行</h4>（[参考サイト](http://sdl2referencejp.osdn.jp/index.html)） Ubuntu20.04 LTS
+        に以下を入力し実行する ``` gcc -g -o sample04 sample04.c `sdl2-config --cflags --libs` ./sample04 ``` ####
+        <h4>発生している問題・エラー</h4>
+        ```
+        SDL could not initialize! SDL_Error: No available video device ```
 
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
+</body>
 
-    SDL_Quit();
-
-    return 0;
-}
-```
-
-####作業用ディレクトリに移動
-homeディレクトリから直下のdemoという名前のディレクトリに移動する場合、以下のコマンドをUbuntu20.04 LTS に入力し実行する
-
-```
-cd demo
-```
-####コンパイルと実行（[参考サイト](http://sdl2referencejp.osdn.jp/index.html)）
-Ubuntu20.04 LTS に以下を入力し実行する
-
-```
-gcc -g -o sample04 sample04.c `sdl2-config --cflags --libs`
-./sample04
-```
-#### 発生している問題・エラー
-```
-SDL could not initialize! SDL_Error: No available video device                               
-```
+</html>
